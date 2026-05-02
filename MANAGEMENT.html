@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAND MANAGEMENT — 吉川貴仁</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --text: #d4d0c8;
+      --muted: #555555;
+      --accent: #8a7a6a;
+      --white: #ece8e0;
+      --green: #4a7a5a;
+      --red: #7a4a4a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Courier New', 'MS Gothic', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      padding: 60px 40px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 40px;
+      margin-bottom: 60px;
+    }
+    .header-label { color: var(--muted); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 16px; }
+    .header-title { font-size: 22px; color: var(--white); letter-spacing: 0.05em; }
+    .section { margin-bottom: 60px; }
+    .section-label {
+      font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 24px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-number { color: var(--accent); margin-right: 12px; }
+    p { color: var(--text); margin-bottom: 12px; max-width: 720px; }
+    .highlight {
+      color: var(--white); padding: 20px; border-left: 2px solid var(--accent);
+      background: var(--surface); margin: 20px 0; line-height: 1.8;
+    }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    td:first-child { color: var(--muted); font-size: 11px; letter-spacing: 0.2em; white-space: nowrap; width: 200px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin: 20px 0; }
+    .grid-cell { background: var(--surface); padding: 20px; }
+    .grid-label { font-size: 10px; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .grid-content { color: var(--text); line-height: 1.8; font-size: 13px; }
+    .tag-confirmed { color: var(--green); font-size: 11px; }
+    .tag-tbd { color: var(--muted); font-size: 11px; }
+    .price-row { display: flex; gap: 0; margin: 16px 0; }
+    .price-tier {
+      flex: 1; padding: 16px; border: 1px solid var(--border); margin-right: -1px;
+      text-align: center;
+    }
+    .price-tier-label { font-size: 10px; letter-spacing: 0.2em; color: var(--muted); margin-bottom: 6px; }
+    .price-tier-value { color: var(--white); font-size: 15px; }
+    .price-tier-example { color: var(--muted); font-size: 11px; margin-top: 4px; }
+    .timeline { margin: 20px 0; }
+    .timeline-item { display: flex; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .timeline-date { color: var(--accent); font-size: 12px; white-space: nowrap; width: 100px; }
+    .timeline-content { color: var(--text); }
+    .comp-row { display: grid; grid-template-columns: 160px 1fr 120px; gap: 0; border-bottom: 1px solid var(--border); }
+    .comp-row:first-child { border-top: 1px solid var(--border); }
+    .comp-cell { padding: 12px 16px; font-size: 13px; }
+    .comp-name { color: var(--white); }
+    .comp-desc { color: var(--muted); }
+    .comp-price { color: var(--accent); text-align: right; }
+    .map-wrap { margin: 24px 0; }
+    .map-title { font-size: 10px; letter-spacing: 0.3em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
+    .map-svg { width: 100%; background: var(--surface); border: 1px solid var(--border); display: block; }
+    .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--muted); font-size: 11px; letter-spacing: 0.2em; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-label">Brand Management Document — 2026.05.01</div>
+    <div class="header-title">経営設計｜吉川貴仁ブランド</div>
+  </div>
+
+
+  <!-- 01 POSITIONING -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">01</span>ポジショニング</div>
+
+    <div class="price-row">
+      <div class="price-tier">
+        <div class="price-tier-label">ENTRY</div>
+        <div class="price-tier-value">¥10k〜20k</div>
+        <div class="price-tier-example">小物・アクセサリー</div>
+      </div>
+      <div class="price-tier">
+        <div class="price-tier-label">MAIN</div>
+        <div class="price-tier-value">¥50k〜150k</div>
+        <div class="price-tier-example">ジャケット・パンツ</div>
+      </div>
+      <div class="price-tier">
+        <div class="price-tier-label">HIGH-END</div>
+        <div class="price-tier-value">¥200k〜300k</div>
+        <div class="price-tier-example">一点物・受注品</div>
+      </div>
+    </div>
+
+    <p style="color: var(--muted); font-size: 12px; margin-top: 8px;">市場：国内優先 → 海外展開</p>
+
+    <div class="section-label" style="margin-top: 32px;">競合マップ</div>
+
+    <p style="color:var(--muted);font-size:12px;margin-bottom:20px;">
+      4つの軸：① 価格帯　② コンセプト性（芸術性）　③ クラフト性（手仕事）　④ デジタル統合度<br>
+      下の2枚のマップでそれぞれ可視化。
+    </p>
+
+    <!-- MAP 1: 価格 × コンセプト性 -->
+    <div class="map-wrap">
+      <div class="map-title">MAP 1 — 価格帯 × コンセプト性（芸術性）</div>
+      <svg class="map-svg" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            .axis { stroke: #2a2a2a; stroke-width: 1; }
+            .axis-label { fill: #444; font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 0.15em; }
+            .dot { fill: #5a5048; }
+            .dot-you { fill: #ece8e0; }
+            .brand-label { fill: #888; font-family: 'Courier New', monospace; font-size: 10px; }
+            .brand-label-you { fill: #ece8e0; font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; }
+            .grid-line { stroke: #1a1a1a; stroke-width: 1; stroke-dasharray: 4,4; }
+            .quad-label { fill: #222; font-family: 'Courier New', monospace; font-size: 10px; letter-spacing: 0.1em; }
+          </style>
+        </defs>
+
+        <!-- grid -->
+        <line class="grid-line" x1="350" y1="40" x2="350" y2="460"/>
+        <line class="grid-line" x1="60" y1="250" x2="680" y2="250"/>
+
+        <!-- axes -->
+        <line class="axis" x1="60" y1="460" x2="680" y2="460"/>
+        <line class="axis" x1="60" y1="40" x2="60" y2="460"/>
+
+        <!-- axis labels -->
+        <text class="axis-label" x="340" y="490" text-anchor="middle">← 手頃  /  価格帯  /  高価格 →</text>
+        <text class="axis-label" x="20" y="254" text-anchor="middle" transform="rotate(-90,20,254)">← 商業的  /  コンセプト  /  前衛的 →</text>
+
+        <!-- quadrant labels -->
+        <text class="quad-label" x="100" y="75">高コンセプト</text>
+        <text class="quad-label" x="100" y="90">低価格</text>
+        <text class="quad-label" x="450" y="75">高コンセプト</text>
+        <text class="quad-label" x="450" y="90">高価格</text>
+        <text class="quad-label" x="100" y="435">低コンセプト</text>
+        <text class="quad-label" x="100" y="450">低価格</text>
+        <text class="quad-label" x="450" y="435">低コンセプト</text>
+        <text class="quad-label" x="450" y="450">高価格</text>
+
+        <!-- UNIQLO: low price, low concept -->
+        <circle class="dot" cx="90" cy="400" r="5"/>
+        <text class="brand-label" x="100" y="404">UNIQLO</text>
+
+        <!-- Attachment: mid-low price, mid concept -->
+        <circle class="dot" cx="190" cy="310" r="5"/>
+        <text class="brand-label" x="200" y="314">Attachment</text>
+
+        <!-- Devoa: mid price, mid-high concept -->
+        <circle class="dot" cx="250" cy="260" r="5"/>
+        <text class="brand-label" x="260" y="264">Devoa</text>
+
+        <!-- Julius: mid-high price, high concept -->
+        <circle class="dot" cx="370" cy="165" r="5"/>
+        <text class="brand-label" x="380" y="169">Julius</text>
+
+        <!-- BBS: mid-high price, mid-high concept -->
+        <circle class="dot" cx="390" cy="200" r="5"/>
+        <text class="brand-label" x="400" y="204">BBS</text>
+
+        <!-- Rick Owens: high price, high concept -->
+        <circle class="dot" cx="490" cy="145" r="5"/>
+        <text class="brand-label" x="500" y="149">Rick Owens</text>
+
+        <!-- YOU: mid-high price (below Rick), high concept -->
+        <circle class="dot-you" cx="440" cy="130" r="7"/>
+        <text class="brand-label-you" x="452" y="125">YOU</text>
+
+        <!-- Incarnation: high price, mid concept (wearable) -->
+        <circle class="dot" cx="560" cy="280" r="5"/>
+        <text class="brand-label" x="570" y="284">Incarnation</text>
+
+        <!-- Guidi: high price, very high concept -->
+        <circle class="dot" cx="550" cy="120" r="5"/>
+        <text class="brand-label" x="560" y="124">Guidi</text>
+
+        <!-- CCP: very high price, very high concept -->
+        <circle class="dot" cx="630" cy="90" r="5"/>
+        <text class="brand-label" x="580" y="85">CCP</text>
+
+        <!-- Ann D: mid price, high concept -->
+        <circle class="dot" cx="420" cy="175" r="5"/>
+        <text class="brand-label" x="430" y="179">Ann D.</text>
+
+        <!-- Individual Sentiments: mid price, very high concept -->
+        <circle class="dot" cx="300" cy="140" r="5"/>
+        <text class="brand-label" x="310" y="144">Ind. Sentiments</text>
+      </svg>
+    </div>
+
+    <!-- MAP 2: クラフト性 × デジタル統合度 -->
+    <div class="map-wrap" style="margin-top:32px;">
+      <div class="map-title">MAP 2 — クラフト性（手仕事）× デジタル統合度　← このブランドの独自領域</div>
+      <svg class="map-svg" viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- grid -->
+        <line class="grid-line" x1="350" y1="40" x2="350" y2="460"/>
+        <line class="grid-line" x1="60" y1="250" x2="680" y2="250"/>
+
+        <!-- axes -->
+        <line class="axis" x1="60" y1="460" x2="680" y2="460"/>
+        <line class="axis" x1="60" y1="40" x2="60" y2="460"/>
+
+        <!-- axis labels -->
+        <text class="axis-label" x="340" y="490" text-anchor="middle">← INDUSTRIAL / MASS  →  ARTISAN / HANDMADE →</text>
+        <text class="axis-label" x="20" y="254" text-anchor="middle" transform="rotate(-90,20,254)">← TRADITIONAL CRAFT  →  DIGITAL INTEGRATED →</text>
+
+        <!-- quadrant labels -->
+        <text class="quad-label" x="80" y="75">DIGITAL</text>
+        <text class="quad-label" x="80" y="90">+ MASS</text>
+        <text class="quad-label" x="430" y="75">DIGITAL</text>
+        <text class="quad-label" x="430" y="90">+ ARTISAN ← 空白領域</text>
+        <text class="quad-label" x="80" y="440">TRADITIONAL</text>
+        <text class="quad-label" x="80" y="455">+ MASS</text>
+        <text class="quad-label" x="430" y="440">TRADITIONAL</text>
+        <text class="quad-label" x="430" y="455">+ ARTISAN</text>
+
+        <!-- UNIQLO: mass, low digital integration in design -->
+        <circle class="dot" cx="110" cy="340" r="5"/>
+        <text class="brand-label" x="120" y="344">UNIQLO</text>
+
+        <!-- Julius: artisan, traditional -->
+        <circle class="dot" cx="520" cy="370" r="5"/>
+        <text class="brand-label" x="530" y="374">Julius</text>
+
+        <!-- BBS: artisan, slightly digital (technical) -->
+        <circle class="dot" cx="540" cy="290" r="5"/>
+        <text class="brand-label" x="550" y="294">BBS</text>
+
+        <!-- Rick Owens: artisan, traditional -->
+        <circle class="dot" cx="490" cy="360" r="5"/>
+        <text class="brand-label" x="500" y="364">Rick Owens</text>
+
+        <!-- Incarnation: artisan, traditional -->
+        <circle class="dot" cx="580" cy="390" r="5"/>
+        <text class="brand-label" x="590" y="394">Incarnation</text>
+
+        <!-- CCP: artisan, very traditional -->
+        <circle class="dot" cx="620" cy="410" r="5"/>
+        <text class="brand-label" x="570" y="405">CCP</text>
+
+        <!-- Guidi: artisan, traditional -->
+        <circle class="dot" cx="570" cy="380" r="5"/>
+        <text class="brand-label" x="580" y="384">Guidi</text>
+
+        <!-- Ann D: artisan, traditional -->
+        <circle class="dot" cx="460" cy="350" r="5"/>
+        <text class="brand-label" x="470" y="354">Ann D.</text>
+
+        <!-- Digital fashion brands: digital, not artisan -->
+        <circle class="dot" cx="200" cy="120" r="5"/>
+        <text class="brand-label" x="210" y="124">Digital fashion</text>
+
+        <!-- YOU: artisan + HIGH digital — 空白領域 -->
+        <circle class="dot-you" cx="560" cy="100" r="8"/>
+        <text class="brand-label-you" x="575" y="96">YOU</text>
+        <text class="brand-label" x="490" y="115" style="fill:#5a4a3a;font-size:9px;">← 誰もいない領域</text>
+
+        <!-- 領域強調 -->
+        <rect x="380" y="55" width="290" height="185" fill="none" stroke="#3a2a1a" stroke-width="1" stroke-dasharray="6,3"/>
+        <text class="quad-label" x="390" y="70" style="fill:#3a2a1a;">アルチザン × デジタル（空白）</text>
+      </svg>
+    </div>
+
+    <div class="section-label" style="margin-top: 40px;">参照ブランド詳細</div>
+
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Julius</div>
+      <div class="comp-cell comp-desc">日本。ポスト・アポカリプス的な暗黒美学。非常に一貫したダークトーン。レザーワーク強い。</div>
+      <div class="comp-cell comp-price">¥80k〜200k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Boris Bidjan Saberi</div>
+      <div class="comp-cell comp-desc">バルセロナ。技術的・パフォーマンス志向のレザー。構造的で機能性とアートの融合。</div>
+      <div class="comp-cell comp-price">¥80k〜200k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Incarnation</div>
+      <div class="comp-cell comp-desc">日本。ホースハイド専門。極めて高品質、職人主義。日本に深いファン層。非常に近い立ち位置。</div>
+      <div class="comp-cell comp-price">¥150k〜300k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Guidi</div>
+      <div class="comp-cell comp-desc">イタリア。馬革・植物タンニン。時間と経年を哲学にしたブランド。CCPと近い価格帯。</div>
+      <div class="comp-cell comp-price">¥100k〜300k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Devoa</div>
+      <div class="comp-cell comp-desc">日本。クリーンでアーキテクチャル、やや暗め。Juliusより静か。近い雰囲気。</div>
+      <div class="comp-cell comp-price">¥60k〜150k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Individual Sentiments</div>
+      <div class="comp-cell comp-desc">日本。概念的・少量生産・独自素材。このブランドと最もコンセプトの方向性が近い。</div>
+      <div class="comp-cell comp-price">¥30k〜100k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Ann Demeulemeester</div>
+      <div class="comp-cell comp-desc">ベルギー。詩的な暗さ、ロマンチック。レザーより布メインだが美学が近い。</div>
+      <div class="comp-cell comp-price">¥50k〜150k</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell comp-name">Label Under Construction</div>
+      <div class="comp-cell comp-desc">イタリア。概念的ハードウェア×レザー。小物・アクセ中心。エントリーライン参考に。</div>
+      <div class="comp-cell comp-price">¥15k〜80k</div>
+    </div>
+  </div>
+
+
+  <!-- 02 PRODUCT -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">02</span>プロダクト戦略</div>
+
+    <table>
+      <tr>
+        <td>フェーズ1（ルック）</td>
+        <td>レザージャケット + パンツ。幻獣コンセプト第一弾。世界観を見せる。</td>
+      </tr>
+      <tr>
+        <td>フェーズ2（エントリー）</td>
+        <td>小物（カードケース・キーホルダー・ベルト等）。¥10k〜20k。ブランド入口。</td>
+      </tr>
+      <tr>
+        <td>展開数/シーズン</td>
+        <td class="tag-tbd">未定 ── 少量精鋭か通年少量かは最初の製作速度で判断</td>
+      </tr>
+      <tr>
+        <td>販売方式</td>
+        <td>受注生産スタート → 実績がついたら在庫販売へ移行</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <!-- 03 CHANNEL -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">03</span>販売チャネル</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2026年6月</div>
+        <div class="timeline-content">大阪撮影（スタイリスト友人と）。ルックブック完成。SNS発信開始。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">〜2027年2月</div>
+        <div class="timeline-content">Instagram 1万フォロワー目標。幻獣コンテンツ週3投稿。受注販売開始。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2027年2月</div>
+        <div class="timeline-content"><strong>第1回展示会。</strong> 体験型。VR/ゲーム演出・ライティング・幻獣の世界観没入。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2027年以降</div>
+        <div class="timeline-content">実績をもとにセレクトショップへ営業。卸展開。</div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      展示会コンセプト：幻獣の世界に入る体験。<br>
+      VRゴーグル・ゲーム・没入型ライティング。<br>
+      「見に来る」ではなく「召喚される」展示。
+    </div>
+  </div>
+
+
+  <!-- 04 BRAND IDENTITY -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">04</span>ブランドアイデンティティ</div>
+
+    <table>
+      <tr>
+        <td>ブランド名</td>
+        <td class="tag-tbd">未定</td>
+      </tr>
+      <tr>
+        <td>タグ</td>
+        <td>レザータグ → 将来的にメタルタグへ移行</td>
+      </tr>
+      <tr>
+        <td>パッケージ</td>
+        <td>黒い箱・黒いダンボール</td>
+      </tr>
+      <tr>
+        <td>SNS顔出し</td>
+        <td>なし</td>
+      </tr>
+      <tr>
+        <td>投稿頻度</td>
+        <td>週3回（ビジュアル + 制作過程）</td>
+      </tr>
+    </table>
+
+    <div class="section-label" style="margin-top: 32px;">SNSナラティブ戦略</div>
+
+    <div class="highlight">
+      <strong>「謎の天才デザイナーに呼ばれた脇役が、その世界を記録する」</strong><br><br>
+      語り手：なぜかこのブランドに引き込まれてしまった一般人（脇役）<br>
+      主役：語らない謎の天才デザイナー<br><br>
+      光源氏は自分で語らない。周囲の女房が語るから神秘が保たれる。<br>
+      プロセスエコノミーを使いながらブランドの品格を落とさない構造。<br><br>
+      例：「今日もあの人の作業場の光が深夜まで消えなかった。また新しい獣が生まれたらしい。」<br>
+      例：コメント欄で「次に見たい幻獣」を募集する参加型設計。<br>
+      例：脇役視点だから、デザイナーの制作物に「驚く」「圧倒される」リアクションが自然に入る。
+    </div>
+  </div>
+
+
+  <!-- 05 FINANCE -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">05</span>財務設計</div>
+
+    <table>
+      <tr>
+        <td>初期予算</td>
+        <td>実質ゼロベース。友人・家族のリソース活用（撮影・縫製・素材）。</td>
+      </tr>
+      <tr>
+        <td>目標原価率</td>
+        <td>30〜40%以下</td>
+      </tr>
+      <tr>
+        <td>継続判断ライン</td>
+        <td>月商100万円（最終目標）まで継続。</td>
+      </tr>
+    </table>
+
+    <div class="section-label" style="margin-top: 24px;">損益イメージ（メイン価格帯）</div>
+    <table>
+      <tr>
+        <td>販売単価</td>
+        <td>¥100,000（ジャケット想定）</td>
+      </tr>
+      <tr>
+        <td>原価（40%）</td>
+        <td>¥40,000</td>
+      </tr>
+      <tr>
+        <td>粗利</td>
+        <td>¥60,000/点</td>
+      </tr>
+      <tr>
+        <td>月商100万達成に必要な販売数</td>
+        <td>約17点/月（粗利ベース）</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <!-- 06 OPERATION -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">06</span>オペレーション</div>
+
+    <div class="grid">
+      <div class="grid-cell">
+        <div class="grid-label">縫製</div>
+        <div class="grid-content">
+          サンプル・初期：自分<br>
+          スケール時：OEM友人・縫製友人へ外注<br>
+          現在：裏地など最小単位で協力体制あり
+        </div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-label">撮影・コンテンツ</div>
+        <div class="grid-content">
+          基本：自分（カメラ所有）<br>
+          2026年6月：スタイリスト友人と大阪撮影<br>
+          （LVMH出し方等に詳しい業界人）
+        </div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-label">素材</div>
+        <div class="grid-content">
+          父のタンナーから仕入れ<br>
+          仕上げ・色・テクスチャーを共同開発
+        </div>
+      </div>
+      <div class="grid-cell">
+        <div class="grid-label">事業形態</div>
+        <div class="grid-content">
+          個人事業主（登録済）<br>
+          アパレル全般で事業登録
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 07 IMMEDIATE TASKS -->
+  <div class="section">
+    <div class="section-label"><span class="section-number">07</span>直近タスク</div>
+
+    <table>
+      <tr>
+        <td>① ブランド名を決める</td>
+        <td class="tag-tbd">未着手</td>
+      </tr>
+      <tr>
+        <td>② 幻獣を一体デザインする</td>
+        <td class="tag-tbd">未着手（AI画像生成）</td>
+      </tr>
+      <tr>
+        <td>③ 第一弾サンプル製作</td>
+        <td class="tag-tbd">ジャケット + パンツ</td>
+      </tr>
+      <tr>
+        <td>④ 6月 大阪撮影</td>
+        <td class="tag-confirmed">確定済</td>
+      </tr>
+      <tr>
+        <td>⑤ SNS開始（週3・ナラティブ形式）</td>
+        <td class="tag-tbd">未着手</td>
+      </tr>
+      <tr>
+        <td>⑥ 2027年2月展示会の会場・形式を構想</td>
+        <td class="tag-tbd">未着手</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="footer">
+    Compiled: 2026.05.01 &nbsp;/&nbsp; 吉川貴仁 × Claude &nbsp;/&nbsp; C:\Users\freih\Desktop\ファッションブランド\MANAGEMENT.html
+  </div>
+
+</body>
+</html>
